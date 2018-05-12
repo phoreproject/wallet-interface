@@ -133,6 +133,7 @@ type TransactionCallback struct {
 	Timestamp time.Time
 	Value     int64
 	WatchOnly bool
+	BlockTime time.Time
 }
 
 type TransactionOutput struct {
