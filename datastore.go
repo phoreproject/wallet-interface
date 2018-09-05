@@ -22,6 +22,13 @@ const (
 	BitcoinCash          = 145
 	Ethereum             = 60
 	Phore                = 1177
+
+	TestnetBitcoin       = 1000000
+	TestnetLitecoin      = 1000001
+	TestnetZcash         = 1000133
+	TestnetBitcoinCash   = 1000145
+	TestnetEthereum      = 1000060
+	TestnetPhore         = 1001177
 )
 
 func (c *CoinType) String() string {
@@ -38,6 +45,18 @@ func (c *CoinType) String() string {
 		return "Ethereum"
 	case Phore:
 		return "Phore"
+	case TestnetBitcoin:
+		return "Testnet Bitcoin"
+	case TestnetBitcoinCash:
+		return "Testnet Bitcoin Cash"
+	case TestnetZcash:
+		return "Testnet Zcash"
+	case TestnetLitecoin:
+		return "Testnet Litecoin"
+	case TestnetEthereum:
+		return "Testnet Ethereum"
+	case TestnetPhore:
+		return "Testnet Phore"
 	default:
 		return ""
 	}
@@ -57,6 +76,18 @@ func (c *CoinType) CurrencyCode() string {
 		return "ETH"
 	case Phore
 		return "PHR"
+	case TestnetBitcoin:
+		return "TBTC"
+	case TestnetBitcoinCash:
+		return "TBCH"
+	case TestnetZcash:
+		return "TZEC"
+	case TestnetLitecoin:
+		return "TLTC"
+	case TestnetEthereum:
+		return "TETH"
+	case TestnetPhore:
+		return "TPHR"
 	default:
 		return ""
 	}
