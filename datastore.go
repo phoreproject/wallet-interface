@@ -1,12 +1,17 @@
 package wallet
 
 import (
-	"bytes"
 	"github.com/phoreproject/btcd/btcec"
 	"github.com/phoreproject/btcd/chaincfg/chainhash"
 	"github.com/phoreproject/btcd/wire"
 	"time"
+	"bytes"
 )
+
+type Coin interface {
+	String() string
+	CurrencyCode() string
+}
 
 type CoinType uint32
 
@@ -14,7 +19,9 @@ const (
 	Bitcoin     CoinType = 0
 	Litecoin             = 1
 	Zcash                = 133
-	BitcoinCash CoinType = 145
+	BitcoinCash          = 145
+	Ethereum             = 60
+	Phore                = 1177
 )
 
 func (c *CoinType) String() string {
@@ -27,6 +34,29 @@ func (c *CoinType) String() string {
 		return "Zcash"
 	case Litecoin:
 		return "Litecoin"
+	case Ethereum:
+		return "Ethereum"
+	case Phore:
+		return "Phore"
+	default:
+		return ""
+	}
+}
+
+func (c *CoinType) CurrencyCode() string {
+	switch *c {
+	case Bitcoin:
+		return "BTC"
+	case BitcoinCash:
+		return "BCH"
+	case Zcash:
+		return "ZEC"
+	case Litecoin:
+		return "LTC"
+	case Ethereum:
+		return "ETH"
+	case Phore
+		return "PHR"
 	default:
 		return ""
 	}
