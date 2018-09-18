@@ -74,7 +74,7 @@ func (c *CoinType) CurrencyCode() string {
 		return "LTC"
 	case Ethereum:
 		return "ETH"
-	case Phore
+	case Phore:
 		return "PHR"
 	case TestnetBitcoin:
 		return "TBTC"
